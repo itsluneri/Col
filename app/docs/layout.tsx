@@ -1,19 +1,20 @@
-import { DocsPageNavigation, DocsSidebar } from "@/components/DocsSidebar";
-import { Header } from "@/components/Header";
-import styles from "./docs.module.css";
+import { DocsPageNavigation, DocsSidebar, DocsToc, DocsTransition } from "@/components/DocsSidebar";
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <Header />
-      <main className="docs-page-shell grid min-h-screen gap-10 px-5 pt-24 pb-20 sm:px-8 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-10">
-        <aside className={`${styles.sidebarColumn} min-w-0`}>
-          <div className={styles.sidebarFixed}>
-            <DocsSidebar />
-          </div>
-        </aside>
-        <div className="docs-copy mx-auto w-full min-w-0 max-w-[76ch]">{children}<DocsPageNavigation /></div>
-      </main>
-    </>
+    <div className="docs-layout">
+      <aside className="docs-layout-nav">
+        <DocsSidebar />
+      </aside>
+      <div className="docs-layout-main">
+        <DocsTransition>
+          {children}
+          <DocsPageNavigation />
+        </DocsTransition>
+      </div>
+      <aside className="docs-layout-toc">
+        <DocsToc />
+      </aside>
+    </div>
   );
 }
