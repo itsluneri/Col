@@ -53,12 +53,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className={`dark ${inter.variable} ${pixelifySans.variable} ${geistPixel.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `try{const t=localStorage.getItem('col:theme');const l=t==='light'||(!t&&matchMedia('(prefers-color-scheme: light)').matches);document.documentElement.classList.toggle('light',l);document.documentElement.classList.toggle('dark',!l)}catch{}` }} />
       </head>
       <body
-        className={`${inter.variable} ${pixelifySans.variable} ${geistPixel.variable} ${geistMono.variable} min-h-screen font-sans`}
+        className="min-h-screen font-sans"
       >
         {children}
         <SiteNotice />
