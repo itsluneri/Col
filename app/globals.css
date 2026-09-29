@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "SF Pro Rounded", ui-rounded, var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-display: "SF Pro Rounded", ui-rounded, var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   --font-pixel: var(--font-pixelify-sans), ui-monospace, monospace;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
