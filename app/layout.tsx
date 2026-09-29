@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Geist_Pixel, Inter, Nunito, Pixelify_Sans } from "next/font/google";
 import { siteUrl, socialImage } from "@/lib/site";
+import { AppFrame } from "@/components/AppFrame";
 import { SiteNotice } from "@/components/SiteNotice";
 import "./globals.css";
 
@@ -66,7 +67,7 @@ export default function RootLayout({
       <body
         className="min-h-screen font-sans"
       >
-        {children}
+        <AppFrame>{children}</AppFrame>
         <SiteNotice />
       </body>
     </html>
